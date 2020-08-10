@@ -1,0 +1,830 @@
+.navigation {
+    position: fixed;
+    border-bottom: solid 1px;
+    border-image: linear-gradient(90deg, transparent, var(--control-text-color), transparent) 1;
+    background-color: #ffffff;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.navigation h1 {
+    line-height: 30px;
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    font-family: 'Consolas', sans-serif;
+}
+
+.navigation h1.h1Left {
+    text-align: right;
+}
+
+.navigation h1.h1Right {
+    text-align: left;
+}
+
+.navigation h1 a, .navigation h1 a:visited {
+    text-decoration: none;
+    color: var(--control-text-color);
+}
+
+#Hamburger {
+    position: relative;
+    padding: 0px;
+    /* cursor: pointer; */
+}
+
+.hamMenuDiv {
+    width: 70px;
+}
+
+#Hamburger span:nth-child(-n+3) {
+    z-index: 10;
+    display: block;
+    position: absolute;
+    border: 5px solid #0047ba;
+    border-radius: 50%;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#Hamburger span:nth-child(1) {
+    top: 5px;
+    left: 5px;
+    width: 60px;
+    height: 60px;
+}
+
+#Hamburger span:nth-child(2) {
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+#Hamburger span:nth-child(3) {
+    top: 25px;
+    left: 25px;
+    width: 20px;
+    height: 20px;
+}
+
+#Hamburger span:nth-child(n+4) {
+    z-index: 10;
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    width: 10px;
+    height: 45px;
+    padding-top: 28px;
+    color: #444444;
+    font-size: 11px;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    transform-origin: top center;
+}
+
+#Hamburger .char1 {
+    -webkit-transform: rotate(18deg);
+    -moz-transform: rotate(18deg);
+    -o-transform: rotate(18deg);
+    transform: rotate(18deg);    
+}
+
+#Hamburger .char2 {
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    transform: rotate(3deg);    
+}
+
+#Hamburger .char3 {
+    -webkit-transform: rotate(-9deg);
+    -moz-transform: rotate(-9deg);
+    -o-transform: rotate(-9deg);
+    transform: rotate(-9deg);    
+}
+
+#Hamburger .char4 {
+    -webkit-transform: rotate(-21deg);
+    -moz-transform: rotate(-21deg);
+    -o-transform: rotate(-21deg);
+    transform: rotate(-21deg);    
+}
+
+nav{
+    margin: 0 auto;
+    font-weight: 600;
+    /* float: right;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.3em;
+    font-weight: 600; */
+}
+
+nav>ul {
+    max-width: 480px;
+    /* transform: scale(0.78); */
+    /* transform: translateY(calc(480px * 0.78)); */
+}
+
+nav>ul span[class^="CircleMenuSpan"] {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    top: 35px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+nav>ul.open span.CircleMenuSpan1 {
+    top: -205px;
+    left: calc((100% - 480px) / 2);
+    width: 480px;
+    height: 480px;
+}
+
+nav>ul.open span.CircleMenuSpan2 {
+    top: -168px;
+    left: calc((100% - 406px) / 2);
+    width: 406px;
+    height: 406px;
+}
+
+nav>ul.open span.CircleMenuSpan3 {
+    top: -131px;
+    left: calc((100% - 332px) / 2);
+    width: 332px;
+    height: 332px;
+    z-index: 2;
+}
+
+nav>ul.open span.CircleMenuSpan4 {
+    top: -93px;
+    left: calc((100% - 258px) / 2);
+    width: 258px;
+    height: 258px;
+    z-index: 3;
+}
+
+nav>ul.open span.CircleMenuSpan5 {
+    top: -58px;
+    left: calc((100% - 185px) / 2);
+    width: 185px;
+    height: 185px;
+    z-index: 4;
+}
+
+nav>ul.open span.CircleMenuSpan6 {
+    top: -20px;
+    left: calc((100% - 111px) / 2);
+    width: 111px;
+    height: 111px;
+    z-index: 5;
+}
+
+nav>ul span.CircleMenuSpan1 {
+    border-radius: 480px;
+    background-color: #0047ba;
+    opacity: 0.9;
+}
+
+nav>ul span.CircleMenuSpan2 {
+    border-radius: 406px;
+    background-color: #ffffff;
+}
+
+nav>ul span.CircleMenuSpan3 {
+    border-radius: 332px;
+    background-color: #0047ba;
+}
+
+nav>ul span.CircleMenuSpan4 {
+    border-radius: 258px;
+    background-color: #ffffff;
+}
+
+nav>ul span.CircleMenuSpan5 {
+    border-radius: 185px;
+    background-color: #0047ba;
+}
+
+nav>ul span.CircleMenuSpan6 {
+    border-radius: 111px;
+    background-color: #ffffff;
+}
+
+nav>ul {list-style-type: none;}
+
+nav>ul.ham {
+    /* -webkit-transition: width 0.5s ease;
+    -moz-transition: width 0.5s ease;
+    -o-transition: width 0.5s ease;
+    transition: width 0.5s ease; */
+}
+
+nav>ul>li>a {
+    line-height: 15px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    font-weight: bold;
+    color: #0087c0; /* var(--control-text-color); */
+}
+
+body.hasHover nav>ul>li>a:hover {
+    font-weight: 400;
+    color: #0087c0;
+}
+
+nav>ul.ham span[class^="Menu"] {
+    position: absolute;
+    top: 35px;
+    left: calc(50% - 8px);
+    width: 16px;
+    height: 0;
+    padding-top: 0;
+    font-size: 0px;
+    text-align: center;
+    transform-origin: top center;
+}
+
+nav>ul.ham.open span[class^="Menu"] {
+    font-size: 20px;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+nav>ul.ham>li>a>span[class^="Menu1Char"] {color: #ffffff;}
+
+nav>ul.ham.open>li>a>span[class^="Menu1Char"] {
+    height: 85px;
+    padding-top: 65px;
+    z-index: 5;
+}
+
+nav>ul.ham>li>a>span.Menu1Char1 {
+    -webkit-transform: rotate(calc(15deg - 75deg));
+    -moz-transform: rotate(calc(15deg - 75deg));
+    -o-transform: rotate(calc(15deg - 75deg));
+    transform: rotate(calc(15deg - 75deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu1Char2 {
+    -webkit-transform: rotate(calc(5deg - 75deg));
+    -moz-transform: rotate(calc(5deg - 75deg));
+    -o-transform: rotate(calc(5deg - 75deg));
+    transform: rotate(calc(5deg - 75deg));
+}
+
+nav>ul.ham>li>a>span.Menu1Char3 {
+    -webkit-transform: rotate(calc(-5deg - 75deg));
+    -moz-transform: rotate(calc(-5deg - 75deg));
+    -o-transform: rotate(calc(-5deg - 75deg));
+    transform: rotate(calc(-5deg - 75deg));
+}
+
+nav>ul.ham>li>a>span.Menu1Char4 {
+    -webkit-transform: rotate(calc(-15deg - 75deg));
+    -moz-transform: rotate(calc(-15deg - 75deg));
+    -o-transform: rotate(calc(-15deg - 75deg));
+    transform: rotate(calc(-15deg - 75deg));
+}
+
+nav>ul.ham.open>li>a>span[class^="Menu2Char"] {
+    height: 122px;
+    padding-top: 102px;
+    z-index: 4;
+}
+
+nav>ul.ham>li>a>span.Menu2Char1 {
+    -webkit-transform: rotate(calc(40deg + 55deg));
+    -moz-transform: rotate(calc(40deg + 55deg));
+    -o-transform: rotate(calc(40deg + 55deg));
+    transform: rotate(calc(40deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu2Char2 {
+    -webkit-transform: rotate(calc(32deg + 55deg));
+    -moz-transform: rotate(calc(32deg + 55deg));
+    -o-transform: rotate(calc(32deg + 55deg));
+    transform: rotate(calc(32deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu2Char3 {
+    -webkit-transform: rotate(calc(24deg + 55deg));
+    -moz-transform: rotate(calc(24deg + 55deg));
+    -o-transform: rotate(calc(24deg + 55deg));
+    transform: rotate(calc(24deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu2Char4 {
+    -webkit-transform: rotate(calc(16deg + 55deg));
+    -moz-transform: rotate(calc(16deg + 55deg));
+    -o-transform: rotate(calc(16deg + 55deg));
+    transform: rotate(calc(16deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu2Char5 {
+    -webkit-transform: rotate(calc(8deg + 55deg));
+    -moz-transform: rotate(calc(8deg + 55deg));
+    -o-transform: rotate(calc(8deg + 55deg));
+    transform: rotate(calc(8deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu2Char6 {
+    -webkit-transform: rotate(calc(0deg + 55deg));
+    -moz-transform: rotate(calc(0deg + 55deg));
+    -o-transform: rotate(calc(0deg + 55deg));
+    transform: rotate(calc(0deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu2Char7 {
+    -webkit-transform: rotate(calc(-8deg + 55deg));
+    -moz-transform: rotate(calc(-8deg + 55deg));
+    -o-transform: rotate(calc(-8deg + 55deg));
+    transform: rotate(calc(-8deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu2Char8 {
+    -webkit-transform: rotate(calc(-16deg + 55deg));
+    -moz-transform: rotate(calc(-16deg + 55deg));
+    -o-transform: rotate(calc(-16deg + 55deg));
+    transform: rotate(calc(-16deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu2Char9 {
+    -webkit-transform: rotate(calc(-24deg + 55deg));
+    -moz-transform: rotate(calc(-24deg + 55deg));
+    -o-transform: rotate(calc(-24deg + 55deg));
+    transform: rotate(calc(-24deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu2Char10 {
+    -webkit-transform: rotate(calc(-32deg + 55deg));
+    -moz-transform: rotate(calc(-32deg + 55deg));
+    -o-transform: rotate(calc(-32deg + 55deg));
+    transform: rotate(calc(-32deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu2Char11 {
+    -webkit-transform: rotate(calc(-40deg + 55deg));
+    -moz-transform: rotate(calc(-40deg + 55deg));
+    -o-transform: rotate(calc(-40deg + 55deg));
+    transform: rotate(calc(-40deg + 55deg)); 
+}
+
+nav>ul.ham>li>a>span[class^="Menu3Char"] {color: #ffffff;}
+
+nav>ul.ham.open>li>a>span[class^="Menu3Char"] {
+    height: 160px;
+    padding-top: 140px;
+    z-index: 3;
+}
+
+nav>ul.ham>li>a>span.Menu3Char1 {
+    -webkit-transform: rotate(calc(20deg - 10deg));
+    -moz-transform: rotate(calc(20deg - 10deg));
+    -o-transform: rotate(calc(20deg - 10deg));
+    transform: rotate(calc(20deg - 10deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu3Char2 {
+    -webkit-transform: rotate(calc(15deg - 10deg));
+    -moz-transform: rotate(calc(15deg - 10deg));
+    -o-transform: rotate(calc(15deg - 10deg));
+    transform: rotate(calc(15deg - 10deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu3Char3 {
+    -webkit-transform: rotate(calc(10deg - 10deg));
+    -moz-transform: rotate(calc(10deg - 10deg));
+    -o-transform: rotate(calc(10deg - 10deg));
+    transform: rotate(calc(10deg - 10deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu3Char4 {
+    -webkit-transform: rotate(calc(5deg - 10deg));
+    -moz-transform: rotate(calc(5deg - 10deg));
+    -o-transform: rotate(calc(5deg - 10deg));
+    transform: rotate(calc(5deg - 10deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu3Char5 {
+    -webkit-transform: rotate(calc(-5deg - 10deg));
+    -moz-transform: rotate(calc(-5deg - 10deg));
+    -o-transform: rotate(calc(-5deg - 10deg));
+    transform: rotate(calc(-5deg - 10deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu3Char6 {
+    -webkit-transform: rotate(calc(-10deg - 10deg));
+    -moz-transform: rotate(calc(-10deg - 10deg));
+    -o-transform: rotate(calc(-10deg - 10deg));
+    transform: rotate(calc(-10deg - 10deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu3Char7 {
+    -webkit-transform: rotate(calc(-15deg - 10deg));
+    -moz-transform: rotate(calc(-15deg - 10deg));
+    -o-transform: rotate(calc(-15deg - 10deg));
+    transform: rotate(calc(-15deg - 10deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu3Char8 {
+    -webkit-transform: rotate(calc(-20deg - 10deg));
+    -moz-transform: rotate(calc(-20deg - 10deg));
+    -o-transform: rotate(calc(-20deg - 10deg));
+    transform: rotate(calc(-20deg - 10deg)); 
+}
+
+nav>ul.ham.open>li>a>span[class^="Menu4Char"] {
+    height: 195px;
+    padding-top: 175px;
+    z-index: 2;
+}
+
+nav>ul.ham>li>a>span.Menu4Char1 {
+    -webkit-transform: rotate(calc(12deg + 35deg));
+    -moz-transform: rotate(calc(12deg + 35deg));
+    -o-transform: rotate(calc(12deg + 35deg));
+    transform: rotate(calc(12deg + 35deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu4Char2 {
+    -webkit-transform: rotate(calc(8deg + 35deg));
+    -moz-transform: rotate(calc(8deg + 35deg));
+    -o-transform: rotate(calc(8deg + 35deg));
+    transform: rotate(calc(8deg + 35deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu4Char3 {
+    -webkit-transform: rotate(calc(4deg + 35deg));
+    -moz-transform: rotate(calc(4deg + 35deg));
+    -o-transform: rotate(calc(4deg + 35deg));
+    transform: rotate(calc(4deg + 35deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu4Char4 {
+    -webkit-transform: rotate(calc(0deg + 35deg));
+    -moz-transform: rotate(calc(0deg + 35deg));
+    -o-transform: rotate(calc(0deg + 35deg));
+    transform: rotate(calc(0deg + 35deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu4Char5 {
+    -webkit-transform: rotate(calc(-4deg + 35deg));
+    -moz-transform: rotate(calc(-4deg + 35deg));
+    -o-transform: rotate(calc(-4deg + 35deg));
+    transform: rotate(calc(-4deg + 35deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu4Char6 {
+    -webkit-transform: rotate(calc(-8deg + 35deg));
+    -moz-transform: rotate(calc(-8deg + 35deg));
+    -o-transform: rotate(calc(-8deg + 35deg));
+    transform: rotate(calc(-8deg + 35deg)); 
+}
+
+nav>ul.ham>li>a>span.Menu4Char7 {
+    -webkit-transform: rotate(calc(-12deg + 35deg));
+    -moz-transform: rotate(calc(-12deg + 35deg));
+    -o-transform: rotate(calc(-12deg + 35deg));
+    transform: rotate(calc(-12deg + 35deg)); 
+}
+
+nav>ul.ham span[class^="Menu5Char"] {color: #c0c0c0;}
+
+nav>ul.ham.open span[class^="Menu5Char"] {
+    height: 225px;
+    padding-top: 205px;
+    z-index: 2;
+}
+
+nav>ul.ham span.Menu5Char1 {
+    -webkit-transform: rotate(calc(24deg + 0deg));
+    -moz-transform: rotate(calc(24deg + 0deg));
+    -o-transform: rotate(calc(24deg + 0deg));
+    transform: rotate(calc(24deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char2 {
+    -webkit-transform: rotate(calc(20deg + 0deg));
+    -moz-transform: rotate(calc(20deg + 0deg));
+    -o-transform: rotate(calc(20deg + 0deg));
+    transform: rotate(calc(20deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char3 {
+    -webkit-transform: rotate(calc(16deg + 0deg));
+    -moz-transform: rotate(calc(16deg + 0deg));
+    -o-transform: rotate(calc(16deg + 0deg));
+    transform: rotate(calc(16deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char4 {
+    -webkit-transform: rotate(calc(12deg + 0deg));
+    -moz-transform: rotate(calc(12deg + 0deg));
+    -o-transform: rotate(calc(12deg + 0deg));
+    transform: rotate(calc(12deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char5 {
+    -webkit-transform: rotate(calc(8deg + 0deg));
+    -moz-transform: rotate(calc(8deg + 0deg));
+    -o-transform: rotate(calc(8deg + 0deg));
+    transform: rotate(calc(8deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char6 {
+    -webkit-transform: rotate(calc(4deg + 0deg));
+    -moz-transform: rotate(calc(4deg + 0deg));
+    -o-transform: rotate(calc(4deg + 0deg));
+    transform: rotate(calc(4deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char7 {
+    -webkit-transform: rotate(calc(-4deg + 0deg));
+    -moz-transform: rotate(calc(-4deg + 0deg));
+    -o-transform: rotate(calc(-4deg + 0deg));
+    transform: rotate(calc(-4deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char8 {
+    -webkit-transform: rotate(calc(-8deg + 0deg));
+    -moz-transform: rotate(calc(-8deg + 0deg));
+    -o-transform: rotate(calc(-8deg + 0deg));
+    transform: rotate(calc(-8deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char9 {
+    -webkit-transform: rotate(calc(-12deg + 0deg));
+    -moz-transform: rotate(calc(-12deg + 0deg));
+    -o-transform: rotate(calc(-12deg + 0deg));
+    transform: rotate(calc(-12deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char10 {
+    -webkit-transform: rotate(calc(-16deg + 0deg));
+    -moz-transform: rotate(calc(-16deg + 0deg));
+    -o-transform: rotate(calc(-16deg + 0deg));
+    transform: rotate(calc(-16deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char11 {
+    -webkit-transform: rotate(calc(-20deg + 0deg));
+    -moz-transform: rotate(calc(-20deg + 0deg));
+    -o-transform: rotate(calc(-20deg + 0deg));
+    transform: rotate(calc(-20deg + 0deg)); 
+}
+
+nav>ul.ham span.Menu5Char12 {
+    -webkit-transform: rotate(calc(-24deg + 0deg));
+    -moz-transform: rotate(calc(-24deg + 0deg));
+    -o-transform: rotate(calc(-24deg + 0deg));
+    transform: rotate(calc(-24deg + 0deg)); 
+}
+
+
+
+
+
+
+nav>ul>li>a:not(:only-child) {
+    /* border-left: solid 1px;
+    border-image: linear-gradient(transparent, var(--control-text-color), transparent) 1;
+    text-align: right; */
+}
+
+nav>ul>li>a:not(:only-child)>img {/* height: 35px; */}
+
+nav>ul>li>a:not(:only-child):after {
+    /* padding-left: 4px;
+    content: '▾';
+    display: inline-block; */
+}
+
+nav>ul>li>ul {
+    /* list-style-type: none;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1; */
+    /* box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); */
+}
+
+nav>ul>li>ul>li {
+    /* display: block;
+    min-width: 120px;
+    line-height: 50px;
+    height: 0;
+    text-align: center;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; */
+}
+
+nav>ul>li>ul.open>li {
+    /* height: 50px;
+    line-height: 50px; */
+}
+
+nav>ul>li>ul>li>a {
+   /*  display: block;
+    min-width: 120px;
+    z-index: 2;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    text-align: right;
+    padding-right: 10px; */
+}
+
+nav>ul>li>ul>li>a>img {
+    /* height: 25px; */
+}
+
+/* changing header colors here: */
+/* .firstSec {background-color: transparent;}
+.evenSec {background-color: var(--control-bg-hover-color);}
+.oddSec {background-color: var(--control-bg-color);}
+
+.firstSec>.nav-container>h1>a, .firstSec>h1>a:visited {color: var(--h-color-2);}
+.evenSec>.nav-container>h1>a, .firstSec>h1>a:visited {color: var(--h-color-2);}
+.oddSec>.nav-container>h1>a, .firstSec>h1>a:visited {color: var(--control-text-color);}
+
+.firstSec nav>ul>li>a {
+    color: var(--h-color-2);
+    background-color: var(--control-bg-hover-color);}
+.evenSec nav>ul>li>a {
+    color: var(--h-color-2);
+    background-color: var(--control-bg-hover-color);}
+.oddSec nav>ul>li>a {
+    color: var(--control-text-color);
+    background-color: var(--control-bg-color);}
+
+body.hasHover .firstSec nav>ul>li>a:hover, .firstSec nav>ul>li>a#language.open {
+    background: var(--main-bg-color-2);
+    color: var(--control-text-color);}
+body.hasHover .evenSec nav>ul>li>a:hover, .evenSec nav>ul>li>a#language.open {
+    background: var(--control-bg-color);
+    color: var(--control-text-color);}
+body.hasHover .oddSec nav>ul>li>a:hover, .oddSec nav>ul>li>a#language.open {
+    background: var(--control-bg-hover-color);
+    color: var(--control-text-hover-color);}
+
+.firstSec nav>ul>li>ul>li>a {
+    background-color: var(--control-bg-hover-color);
+    color: var(--control-text-hover-color)}
+.evenSec nav>ul>li>ul>li>a {
+    background-color: var(--main-bg-color-1);
+    color: var(--control-text-color)}
+.oddSec nav>ul>li>ul>li>a {
+    background-color: var(--main-bg-color-2);
+    color: var(--control-text-color);}
+
+body.hasHover .firstSec nav>ul>li>ul>li>a:hover {
+    background-color: var(--control-bg-color);
+    color: var(--control-text-color)}
+body.hasHover .evenSec nav>ul>li>ul>li>a:hover {
+    background-color: var(--control-bg-hover-color);
+    color: var(--h-color-1)}
+body.hasHover .oddSec nav>ul>li>ul>li>a:hover {
+    background-color: var(--control-bg-hover-color);
+    color: var(--h-color-1)} */
+
+@media screen and (max-width: 767px){
+    #Hamburger {cursor: pointer;}
+
+    #Hamburger.open span:nth-child(-n+3) {
+        border-color: #c0c0c0;
+    }
+
+    #Hamburger.open span:nth-child(2) {
+        width: 40px;
+        height: 1px;
+        border-radius: 3px;
+        border-width: 2.5px;
+        top: 33px;
+        left: 15px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    
+    #Hamburger.open span:nth-child(3) {
+        width: 40px;
+        height: 1px;
+        border-radius: 3px;
+        border-width: 2.5px;
+        top: 33px;
+        left: 15px;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+}
+
+@media screen and (min-width: 768px){
+    #Hamburger span:nth-child(n+4){
+        display: none;
+    }
+
+    [class^="Menu5Char"] {
+        display: none;
+    }
+
+    nav>ul span[class^="CircleMenuSpan"] {
+        display: none;
+    }
+
+    nav>ul {
+        position: relative;
+        padding: 0;
+        width: 100%;
+        overflow: visible;
+        top: 0;
+        z-index: 1;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+        transition: none;
+    }
+
+    nav>ul>li {
+        display: inline-block;
+        width: auto;
+    }
+
+    nav>ul>li:nth-child(2){
+        margin-right: 60px;
+    }
+
+    nav>ul>li>a {
+        /* line-height: 15px; */
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        font-size: 14px;
+        font-weight: bold;
+        color: #0087c0;
+        padding: 0 10px;
+        line-height: 20px;
+        box-shadow: none;
+    }
+
+    nav>ul>li>a>span[class^="Menu1Char"] {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    nav>ul>li>ul {
+        position: absolute;
+        width: auto;
+        right: 20px;
+    }
+
+    nav>ul>li>ul>li>a {
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    nav a.current{
+        text-decoration-line: underline;
+    }
+
+    /* .firstSec nav>ul>li>a {background-color: transparent;}
+    .evenSec nav>ul>li>a {background-color: transparent;}
+    .oddSec nav>ul>li>a {background-color: transparent;} */
+
+}
