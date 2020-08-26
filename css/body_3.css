@@ -18,7 +18,7 @@
   /* transform: scale(1.5); */
 }
 
-.symbol span {
+/* .symbol span {
   z-index: 0;
   display: block;
   position: absolute;
@@ -27,29 +27,66 @@
   overflow: hidden;
 
   transform: translate(-100px, -200px);
-  opacity: 0.4;
-}
+  opacity: 0.3;
+} */
 
-.symbol span:nth-child(1) {
+/* .symbol span:nth-child(1) {
   top: 80px;
-  left: 0;
-  width: calc(calc(275px) * 2);
-  height: calc(calc(275px) * 2);
+  left: -80px;
+  width: calc((calc(275px) * 2) + 75px);
+  height: calc((calc(275px) * 2) + 75px);
 }
 
 .symbol span:nth-child(2) {
   top: calc(80px + (50px * 2));
-  left: calc(50px * 2);
-  width: calc(175px * 2);
-  height: calc(175px * 2);
+  left: calc((50px * 2) - 80px);
+  width: calc((175px * 2) + 75px);
+  height: calc((175px * 2) + 75px);
 }
 
 .symbol span:nth-child(3) {
   top: calc(80px + (100px * 2));
-  left: calc(100px * 2);
-  width: calc(75px * 2);
-  height: calc(75px * 2);
+  left: calc((100px * 2) - 80px);
+  width: calc((75px * 2) + 75px);
+  height: calc((75px * 2) + 75px);
+} */
+
+.symbol span {
+  z-index: 0;
+  display: block;
+  position: absolute;
+  border: solid #0047ba calc(2 * (3vw / 2));
+  border-radius: 50%;
+  overflow: hidden;
+
+  /* transform: translate(-100px, -200px); */
+  transform: translate(-7vw, -15vw);
+  opacity: 0.3;
 }
+
+.symbol span:nth-child(1) {
+  top: calc((4 * 3vw) + 80px);
+  left: calc(4 * 3vw);
+  width: calc(5 * 3vw);
+  height: calc(5 * 3vw);
+}
+
+.symbol span:nth-child(2) {
+  top: calc((2 * 3vw) + 80px);
+  left: calc(2 * 3vw);
+  width: calc(9 * 3vw);
+  height: calc(9 * 3vw);
+}
+
+.symbol span:nth-child(3) {
+  top: calc(80px);
+  left: calc(0px);
+  width: calc(13 * 3vw);
+  height: calc(13 * 3vw);
+}
+
+
+
 
 
 
@@ -145,12 +182,13 @@ body.hasHover .hero-text button:hover, body.hasHover form button:hover {
 }
 
 #home h1 p {
-  font-size: 3vw;
+  font-size: 3.5vw;
   font-family: 'Indie Flower', cursive;
+  text-transform: none;
   /* font-weight: 600; */
-  color: var(--h-color-2);
+  color: #ffffff;
   margin-top: 10px;
-  text-shadow: 1px 1px #444444;
+  text-shadow: 1px 1px #252525;
 }
 
 

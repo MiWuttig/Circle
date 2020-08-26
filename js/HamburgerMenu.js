@@ -72,18 +72,197 @@ document.addEventListener("DOMContentLoaded", function(e){
     function WidthChange(){
         if (mqls[0].matches) {
             list.classList.add("ham");
+            ham.classList.remove("open");
+            list.classList.remove("open");
+            CharToSpan();
         } else if (mqls[1].matches) {
             ham.classList.remove("open");
             list.classList.remove("open");
             list.classList.remove("ham");
+            RemoveSpans();
         } else if (mqls[2].matches) {
             ham.classList.remove("open");
             list.classList.remove("open");
             list.classList.remove("ham");
+            RemoveSpans();
         } else if (mqls[3].matches) {
             ham.classList.remove("open");
             list.classList.remove("open");
             list.classList.remove("ham");
+            RemoveSpans();
         }
     };
 })
+
+var MenuCount;
+
+function CircleCount() {
+    for (ULs of document.getElementsByClassName("CircleMenu")) {
+        return ULs.getElementsByTagName("LI").length;
+    };
+}
+
+function InnerCircleDiameter() {
+    for (ULs of document.getElementsByClassName("CircleMenu")) {
+        for (classes of ULs.classList) {
+            if (classes.startsWith("CM-ID-")) {return classes.slice(6)};
+        };
+    };
+}
+
+function OuterCircleDiameter() {
+    for (ULs of document.getElementsByClassName("CircleMenu")) {
+        for (classes of ULs.classList) {
+            if (classes.startsWith("CM-MD-")) {
+                if (document.documentElement.clientWidth < classes.slice(6)) {
+                    return ((document.documentElement.clientWidth - InnerCircleDiameter()) / (CircleCount() - 1)); 
+                } else {
+                    return ((classes.slice(6) - InnerCircleDiameter()) / (CircleCount() - 1));   
+                };
+            };
+        };
+    };
+}
+
+function FontSize() {
+    return ((OuterCircleDiameter() * 0.4) + "px");
+}
+
+function addRuleOpen(element, MenuIndex) {
+    var aHeight = ((InnerCircleDiameter() / 2) + ((MenuCount - 1) * (OuterCircleDiameter() / 2)));
+    var aPadding = (aHeight - parseInt(FontSize()) - (((OuterCircleDiameter() / 2) - parseInt(FontSize())) / 2));
+    var newRule = "nav>ul.ham.open>li span[class^='Menu" + MenuIndex + "Char'] {height: " + aHeight + "px; padding-top: " + aPadding + "px; z-index: " + (6 - MenuIndex) + ";}"
+    var sheet = document.createElement("style");
+    sheet.innerHTML = newRule;
+    sheet.setAttribute("id", "Menu" + MenuIndex + "Char");
+    if (!document.getElementById("Menu" + MenuIndex + "Char")) {document.body.appendChild(sheet);};
+}
+
+function addRotationRule(element, MenuIndex) {
+    var CharSpacing = 0;
+    var TextRotation = 0;
+    var CharSpacingDeg;
+    var CharCount;
+
+    for (classes of LIs.classList) {if (classes.startsWith("CM-S-")) {CharSpacing = classes.slice(5);};};
+    for (classes of LIs.classList) {if (classes.startsWith("CM-R-")) {TextRotation = parseInt(classes.slice(5));};};     
+
+    switch (CharSpacing) {
+        case "1": CharSpacingDeg = 2.5; break;
+        case "2": CharSpacingDeg = 3; break;
+        case "3": CharSpacingDeg = 4; break;
+        case "4": CharSpacingDeg = 5; break;
+        case "5": CharSpacingDeg = 6; break;
+        case "6": CharSpacingDeg = 7; break;
+        case "7": CharSpacingDeg = 8; break;
+        case "8": CharSpacingDeg = 9; break;
+        case "9": CharSpacingDeg = 10; break;
+        default: CharSpacingDeg = 0; break;
+    }
+
+    if (LIs.textContent.length > 0) {
+        if (LIs.getElementsByTagName("A").length > 0) {
+            for (aTags of LIs.getElementsByTagName("A")) {
+                CharCount = 1
+                var OverallAngle = (aTags.getElementsByTagName("SPAN").length - 1) * CharSpacingDeg;
+                for (spans of aTags.getElementsByTagName("SPAN")) {
+                    var charAngle = (OverallAngle / 2) - ((CharCount - 1) * CharSpacingDeg);
+                    var newRule = "nav>ul.ham>li span.Menu" + MenuIndex + "Char" + CharCount + " {-webkit-transform: rotate(calc(" + charAngle + "deg + " + TextRotation + "deg)); -moz-transform: rotate(calc(" + charAngle + "deg + " + TextRotation + "deg)); -o-transform: rotate(calc(" + charAngle + "deg + " + TextRotation + "deg)); transform: rotate(calc(" + charAngle + "deg + " + TextRotation + "deg));}"
+                    var sheet = document.createElement("style");
+                    sheet.innerHTML = newRule;
+                    sheet.setAttribute("id", "span.Menu" + MenuIndex + "Char" + CharCount)
+                    if (!document.getElementById("span.Menu" + MenuIndex + "Char" + CharCount)) {document.body.appendChild(sheet);};
+                    CharCount++;
+                };
+            };
+        } else {
+            CharCount = 1
+            var OverallAngle = (LIs.getElementsByTagName("SPAN").length - 1) * CharSpacingDeg;
+            for (spans of LIs.getElementsByTagName("SPAN")) {
+                var charAngle = (OverallAngle / 2) - ((CharCount - 1) * CharSpacingDeg);
+                var newRule = "nav>ul.ham>li span.Menu" + MenuIndex + "Char" + CharCount + " {-webkit-transform: rotate(calc(" + charAngle + "deg + " + TextRotation + "deg)); -moz-transform: rotate(calc(" + charAngle + "deg + " + TextRotation + "deg)); -o-transform: rotate(calc(" + charAngle + "deg + " + TextRotation + "deg)); transform: rotate(calc(" + charAngle + "deg + " + TextRotation + "deg));}"
+                var sheet = document.createElement("style");
+                sheet.innerHTML = newRule;
+                sheet.setAttribute("id", "span.Menu" + MenuIndex + "Char" + CharCount)
+                if (!document.getElementById("span.Menu" + MenuIndex + "Char" + CharCount)) {document.body.appendChild(sheet);};
+                CharCount++;
+            };
+        };
+    }; 
+}
+
+function CharToSpan() {
+    MenuCount = 2;
+    for (ULs of document.getElementsByClassName("CircleMenu")) {
+        for (LIs of ULs.getElementsByTagName("LI")) {
+            if (LIs.textContent.length > 0) {
+                if (LIs.getElementsByTagName("A").length > 0) {
+                    for (aTags of LIs.getElementsByTagName("A")) {SubCharToSpan(aTags);};
+                } else {
+                    SubCharToSpan(LIs);
+                };
+                addRuleOpen(LIs, MenuCount);
+                addRotationRule(LIs, MenuCount);
+                MenuCount++;
+            };
+        };
+    };
+}
+
+function SubCharToSpan(element) {
+    var elementText = element.textContent
+    element.textContent = "";
+    for (i = 0; i < elementText.length; i++) {
+        var nNode = document.createElement("SPAN");
+        nNode.innerHTML = elementText.charAt(i);
+        nNode.classList.add("Menu" + MenuCount + "Char" + (i + 1));
+        element.appendChild(nNode);
+    };
+}
+
+function RemoveSpans() {
+    MenuCount = 2;
+    for (ULs of document.getElementsByClassName("CircleMenu")) {
+        for (LIs of ULs.getElementsByTagName("LI")) {
+            if (LIs.textContent.length > 0) {
+                RemoveRuleOpen(MenuCount);
+                if (LIs.getElementsByTagName("A").length > 0) {
+                    for (aTags of LIs.getElementsByTagName("A")) {
+                        RemoveRotationRule(aTags, MenuCount);
+                        SubRemoveSpans(aTags);
+                    };
+                } else {
+                    RemoveRotationRule(LIs, MenuCount);
+                    SubRemoveSpans(LIs);
+                };
+                MenuCount++;
+            };
+        };
+    };
+}
+
+function RemoveRuleOpen(MenuIndex) {
+    /* for (rStyles of document.getElementById) { */
+    if (document.getElementById("Menu" + MenuIndex + "Char")) {
+        document.getElementById("Menu" + MenuIndex + "Char").remove();
+    }
+}
+
+function RemoveRotationRule(element, MenuIndex) {
+    var CharIndex = 1;
+    for (spans of element.getElementsByTagName("SPAN")) {
+        document.getElementById("span.Menu" + MenuIndex + "Char" + CharIndex).remove();
+        CharIndex++;
+    }
+}
+
+function SubRemoveSpans (element) {
+    var nElementText = ""
+    var spanRemoved = false;
+    for (Spans of element.getElementsByTagName("SPAN")) {
+        nElementText = nElementText + Spans.textContent;
+        Spans.remove;
+        spanRemoved = true;
+    };
+    if (spanRemoved) {element.textContent = nElementText;};
+}

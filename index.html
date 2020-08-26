@@ -35,7 +35,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" type="text/css" href="css/body_3.css">
-        <link rel="stylesheet" type="text/css" href="css/HamburgerMenu copy.css"/>
+        <link rel="stylesheet" type="text/css" href="css/HamburgerMenu copy 2.css"/>
 
         <!-- Links to fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
@@ -76,31 +76,16 @@
 
         <div class="row no-gutters">
           <nav>
-            <ul class="nav-list">
-                            <!-- Setting the links to #! will ensure that no action takes place on click. -->
-              <li><a href="#home" class="current" onclick="OpenHamburger('closed')">
-                <span class="Menu1Char1">H</span><span class="Menu1Char2">o</span><span class="Menu1Char3">m</span><span class="Menu1Char4">e</span>
-              </a></li>
-              <li><a href="#activities" onclick="OpenHamburger('closed')">
-                <span class="Menu2Char1">A</span><span class="Menu2Char2">k</span><span class="Menu2Char3">t</span><span class="Menu2Char4">i</span><span class="Menu2Char5">v</span><span class="Menu2Char6">i</span><span class="Menu2Char7">t</span><span class="Menu2Char8">ä</span><span class="Menu2Char9">t</span><span class="Menu2Char10">e</span><span class="Menu2Char11">n</span>
-              </a></li>
-              <li><a href="#about" onclick="OpenHamburger('closed')">
-                <span class="Menu3Char1">Ü</span><span class="Menu3Char2">b</span><span class="Menu3Char3">e</span><span class="Menu3Char4">r</span>
-                <span class="Menu3Char5">m</span><span class="Menu3Char6">i</span><span class="Menu3Char7">c</span><span class="Menu3Char8">h</span>
-              </a></li>
-              <li><a href="#contact" onclick="OpenHamburger('closed')">
-                <span class="Menu4Char1">K</span><span class="Menu4Char2">o</span><span class="Menu4Char3">n</span><span class="Menu4Char4">t</span><span class="Menu4Char5">a</span><span class="Menu4Char6">k</span><span class="Menu4Char7">t</span>
-              </a></li>
+            <ul class="nav-list CircleMenu CM-ID-110 CM-MD-480 CM-BC-1">
+              <!-- Setting the links to #! will ensure that no action takes place on click. -->
 
-              <span class="Menu5Char1">B</span><span class="Menu5Char2">e</span><span class="Menu5Char3">s</span><span class="Menu5Char4">s</span><span class="Menu5Char5">e</span><span class="Menu5Char6">r</span>
-              <span class="Menu5Char7">B</span><span class="Menu5Char8">e</span><span class="Menu5Char9">w</span><span class="Menu5Char10">e</span><span class="Menu5Char11">g</span><span class="Menu5Char12">t</span>
+              <li class="CircleMenu1 onlyHam"></li>
+              <li class="CircleMenu2 CM-S-8 CM-R--72"><a href="#home" class="current" onclick="OpenHamburger('closed')">Home</a></li>
+              <li class="CircleMenu3 CM-S-6 CM-R-50"><a href="#activities" onclick="OpenHamburger('closed')">Aktivitäten</a></li>
+              <li class="CircleMenu4 CM-S-4 CM-R--20"><a href="#about" onclick="OpenHamburger('closed')">Über mich</a></li>
+              <li class="CircleMenu5 CM-S-3 CM-R-25"><a href="#contact" onclick="OpenHamburger('closed')">Kontakt</a></li>
+              <li class="CircleMenu6 CM-S-2 CM-R-0 onlyHam">Besser Bewegt</li>
 
-              <span class="CircleMenuSpan1"></span>
-              <span class="CircleMenuSpan2"></span>
-              <span class="CircleMenuSpan3"></span>
-              <span class="CircleMenuSpan4"></span>
-              <span class="CircleMenuSpan5"></span>
-              <span class="CircleMenuSpan6"></span>
 
               <!-- <li>
                 <a href="#!" id="language" onclick="ChooseLanguage()">
@@ -141,7 +126,7 @@
         <section id="home">
           <h1>
             Constanze <br> Freiling
-            <p>Personal Trainer</p>
+            <p id="test">Personal Trainer</p>
           </h1>
           <div class="symbol">
             <span></span>

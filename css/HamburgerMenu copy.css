@@ -242,6 +242,10 @@ nav>ul.ham {
     transition: width 0.5s ease; */
 }
 
+nav>ul.ham>li {
+    background-color: aqua;
+}
+
 nav>ul>li>a {
     line-height: 15px;
     text-decoration: none;
