@@ -14,43 +14,6 @@
   --control-text-hover-color: #fac206;
 }
 
-.symbol {
-  /* transform: scale(1.5); */
-}
-
-/* .symbol span {
-  z-index: 0;
-  display: block;
-  position: absolute;
-  border: calc(25px * 2) solid #0047ba;
-  border-radius: 50%;
-  overflow: hidden;
-
-  transform: translate(-100px, -200px);
-  opacity: 0.3;
-} */
-
-/* .symbol span:nth-child(1) {
-  top: 80px;
-  left: -80px;
-  width: calc((calc(275px) * 2) + 75px);
-  height: calc((calc(275px) * 2) + 75px);
-}
-
-.symbol span:nth-child(2) {
-  top: calc(80px + (50px * 2));
-  left: calc((50px * 2) - 80px);
-  width: calc((175px * 2) + 75px);
-  height: calc((175px * 2) + 75px);
-}
-
-.symbol span:nth-child(3) {
-  top: calc(80px + (100px * 2));
-  left: calc((100px * 2) - 80px);
-  width: calc((75px * 2) + 75px);
-  height: calc((75px * 2) + 75px);
-} */
-
 .symbol span {
   z-index: 0;
   display: block;

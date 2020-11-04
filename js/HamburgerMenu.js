@@ -52,47 +52,51 @@ function ChooseLanguage(OpenClosed){
     }
 }
 
-document.addEventListener("DOMContentLoaded", function(e){
+function X(){
     ham = document.getElementById("Hamburger");
-    list = document.getElementsByTagName("header")[0].getElementsByTagName("nav")[0].getElementsByTagName("ul")[0];
-    lang = document.getElementById("language");
-    langDropDown = document.getElementsByClassName("nav-dropdown")[0];
+        list = document.getElementsByTagName("header")[0].getElementsByTagName("nav")[0].getElementsByTagName("ul")[0];
+        lang = document.getElementById("language");
+        langDropDown = document.getElementsByClassName("nav-dropdown")[0];
 
-    var mqls = [
-        window.matchMedia("(max-width: 767px)"),
-        window.matchMedia("(min-width: 768px) and (max-width: 991px)"),
-        window.matchMedia("(min-width: 922px) and (max-width: 1199px)"),
-        window.matchMedia("(min-width: 1200px)")
-    ]
+        var mqls = [
+            window.matchMedia("(max-width: 767px)"),
+            window.matchMedia("(min-width: 768px) and (max-width: 991px)"),
+            window.matchMedia("(min-width: 922px) and (max-width: 1199px)"),
+            window.matchMedia("(min-width: 1200px)")
+        ]
 
-    WidthChange();
+        WidthChange();
 
-    for (i = 0; i < mqls.length; i++){mqls[i].addListener(WidthChange);};
+        for (i = 0; i < mqls.length; i++){mqls[i].addListener(WidthChange);};
 
-    function WidthChange(){
-        if (mqls[0].matches) {
-            list.classList.add("ham");
-            ham.classList.remove("open");
-            list.classList.remove("open");
-            CharToSpan();
-        } else if (mqls[1].matches) {
-            ham.classList.remove("open");
-            list.classList.remove("open");
-            list.classList.remove("ham");
-            RemoveSpans();
-        } else if (mqls[2].matches) {
-            ham.classList.remove("open");
-            list.classList.remove("open");
-            list.classList.remove("ham");
-            RemoveSpans();
-        } else if (mqls[3].matches) {
-            ham.classList.remove("open");
-            list.classList.remove("open");
-            list.classList.remove("ham");
-            RemoveSpans();
-        }
-    };
-})
+        function WidthChange(){
+            if (mqls[0].matches) {
+                list.classList.add("ham");
+                ham.classList.remove("open");
+                list.classList.remove("open");
+                CharToSpan();
+            } else if (mqls[1].matches) {
+                ham.classList.remove("open");
+                list.classList.remove("open");
+                list.classList.remove("ham");
+                RemoveSpans();
+            } else if (mqls[2].matches) {
+                ham.classList.remove("open");
+                list.classList.remove("open");
+                list.classList.remove("ham");
+                RemoveSpans();
+            } else if (mqls[3].matches) {
+                ham.classList.remove("open");
+                list.classList.remove("open");
+                list.classList.remove("ham");
+                RemoveSpans();
+            }
+        };
+}
+
+document.addEventListener("DOMContentLoaded", function(e){X();});
+window.addEventListener("orientationchange", function(e){X();});
+window.addEventListener("resize", function(e){X();});
 
 var MenuCount;
 
@@ -125,12 +129,36 @@ function OuterCircleDiameter() {
 }
 
 function FontSize() {
-    return ((OuterCircleDiameter() * 0.4) + "px");
+    return ((OuterCircleDiameter() * 0.35) + "px");
+    /* return ((OuterCircleDiameter() * 0.4) + "px"); */
+}
+
+function addRuleSize(element, MenuIndex) {
+    var wAndH = (parseInt(InnerCircleDiameter()) + ((OuterCircleDiameter()) * (MenuIndex - 1)));
+    var aTop = (wAndH / 2);
+    var newRule = "nav>ul.open.ham li.CircleMenu" + MenuIndex + " {top: calc(" + ~aTop + "px + 35px); left: calc((100% - " + wAndH + "px) / 2); width: " + wAndH + "px; height: " + wAndH + "px;}";
+    var sheet = document.createElement("style");
+    sheet.innerHTML = newRule;
+    sheet.setAttribute("id", "CircleMenu" + MenuIndex);
+    if (!document.getElementById("CircleMenu" + MenuIndex)) {document.body.appendChild(sheet);};
+
+    var newRuleOne = "nav>ul.open.ham li.CircleMenu1" + " {top: calc(" + ~InnerCircleDiameter() / 2 + "px + 35px); left: calc((100% - " + InnerCircleDiameter() + "px) / 2); width: " + InnerCircleDiameter() + "px; height: " + InnerCircleDiameter() + "px;}";
+    var sheetOne = document.createElement("style");
+    sheetOne.innerHTML = newRuleOne;
+    sheetOne.setAttribute("id", "CircleMenu1");
+    if (!document.getElementById("CircleMenu1")) {document.body.appendChild(sheetOne);};
+
+    var newRuleFont = "nav>ul.ham.open>li span[class^='Menu'] {font-size: " + FontSize() + "}";
+    var sheetFont = document.createElement("style");
+    sheetFont.innerHTML = newRuleFont;
+    sheetFont.setAttribute("id", "FontSize");
+    if (!document.getElementById("FontSize")) {document.body.appendChild(sheetFont);};
 }
 
 function addRuleOpen(element, MenuIndex) {
-    var aHeight = ((InnerCircleDiameter() / 2) + ((MenuCount - 1) * (OuterCircleDiameter() / 2)));
-    var aPadding = (aHeight - parseInt(FontSize()) - (((OuterCircleDiameter() / 2) - parseInt(FontSize())) / 2));
+    var aHeight = ((InnerCircleDiameter() / 2) + ((MenuIndex - 1) * (OuterCircleDiameter() / 2)));
+    /* var aPadding = (aHeight - parseInt(FontSize()) - (((OuterCircleDiameter() / 2) - parseInt(FontSize())) / 2)); */
+    var aPadding = ((InnerCircleDiameter() / 2) + ((MenuIndex - 2) * (OuterCircleDiameter() / 2)));
     var newRule = "nav>ul.ham.open>li span[class^='Menu" + MenuIndex + "Char'] {height: " + aHeight + "px; padding-top: " + aPadding + "px; z-index: " + (6 - MenuIndex) + ";}"
     var sheet = document.createElement("style");
     sheet.innerHTML = newRule;
@@ -201,6 +229,9 @@ function CharToSpan() {
                 } else {
                     SubCharToSpan(LIs);
                 };
+                RemoveRuleSize(MenuCount);
+                addRuleSize(LIs, MenuCount);
+                RemoveRuleOpen(MenuCount);
                 addRuleOpen(LIs, MenuCount);
                 addRotationRule(LIs, MenuCount);
                 MenuCount++;
@@ -245,6 +276,15 @@ function RemoveRuleOpen(MenuIndex) {
     /* for (rStyles of document.getElementById) { */
     if (document.getElementById("Menu" + MenuIndex + "Char")) {
         document.getElementById("Menu" + MenuIndex + "Char").remove();
+    }
+}
+
+function RemoveRuleSize(MenuIndex) {
+    if (document.getElementById("CircleMenu" + MenuIndex)) {
+        document.getElementById("CircleMenu" + MenuIndex).remove();
+    }
+    if (document.getElementById("FontSize")) {
+        document.getElementById("FontSize").remove();
     }
 }
 
