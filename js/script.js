@@ -36,6 +36,24 @@ function bodyScroll() {
     });
 }
 
+function CheckIt(switchGroup, switchItem) {
+    switch (switchGroup) {
+        case "contact":
+            // Radiobutton to switch between contact and voucher formular
+            var sec = document.getElementById("contact");
+            // var item = sec.getElementById(switchItem);
+            for (switches of sec.getElementsByTagName("h2")[0].getElementsByClassName("encircle")) {
+                if (switches.id === switchItem) {
+                    switches.classList.add("checked");
+                } else {
+                    switches.classList.remove("checked");
+                    console.log(switchItem)
+                };
+            };
+        break;
+    };
+}
+
 function watchForHover() {
     // lastTouchTime is used for ignoring emulated mousemove events
     // that are fired after touchstart events. Since they're

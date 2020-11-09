@@ -228,6 +228,58 @@ section:nth-child(even) div h2 {
   padding-right: 30px;
 }
 
+.encircle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.encircle {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.encircle svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.encircle path {
+  stroke-width: 8px;
+  stroke-dasharray: 0 1500;
+}
+
+.encircle:hover path {
+  stroke: var(--text-color-1);
+  opacity: 0.25;
+  animation: draw 1s forwards;
+}
+
+.encircle.checked path {
+  stroke: var(--text-color-1);
+  opacity: 0.7;
+  animation: draw 1s forwards;
+}
+
+@keyframes draw {
+  from {
+    stroke-dasharray: 0 1500;
+  }
+
+  to {
+    stroke-dasharray: 1500 1500;
+  }
+}
+
+
+
+
 #ContactFormularContainer, #ContactInfo {
   text-align: center;
 }
