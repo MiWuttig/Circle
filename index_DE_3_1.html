@@ -4,9 +4,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
 
-
         <title>Besser Bewegt Constance Freiling</title>
-        <link rel="icon" type="image/png" href="Img/Logo3.png"/>
+        <!-- HIER DAS NEUE LOGO EINFÜGEN-->
+        <link rel="icon" type="image/png" href="Img/LogoCircle3.png"/>
 
         <script src="js/HamburgerMenu.js"></script>
         <script src="js/script.js"></script>
@@ -34,69 +34,86 @@
         <!-- <link rel="stylesheet" href="css/fontAwesome.css"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <link rel="stylesheet" type="text/css" href="css/body_3.css">
+        <link rel="stylesheet" type="text/css" href="css/body.css">
         <link rel="stylesheet" type="text/css" href="css/HamburgerMenu.css"/>
 
         <!-- Links to fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     </head>
+
     <!-- Created By Fabio Abbruzzesi and Michael Wuttig-->
     <body onscroll="bodyScroll()">
-      <header class="navigation firstSec">
-        <div class="nav-container">
-          <h1 class="brand">
-            <img src="img/Logo3.png" alt="Mountain Discovery Logo">
-            <a href="#home">LOGO.com</a>
-          </h1>
-        
-          <nav>
-            <div id="Hamburger" onclick="OpenHamburger()">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <ul class="nav-list">
-              <!-- Setting the links to #! will ensure that no action takes place on click. -->
-              <li><a href="#home" class="current" onclick="OpenHamburger('closed')">Home</a></li>
-              <li><a href="#activities" onclick="OpenHamburger('closed')">Aktivitäten</a></li>
-              <li><a href="#about" onclick="OpenHamburger('closed')">Über Mich</a></li>
-              <li><a href="#contact" onclick="OpenHamburger('closed')">Kontakt</a></li>
 
-              <li>
-                <a href="#!" id="language" onclick="ChooseLanguage()">
-                  <img src="https://www.countryflags.io/de/flat/64.png" alt="deutsch/german">
-                </a> 
-                <ul class="nav-dropdown" id="lang">
-                  <li>
-                    <a href="index_EN_3_1.html" onclick="OpenHamburger('closed')">
-                      <img src="https://www.countryflags.io/gb/flat/64.png" alt="english">
-                      english
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" onclick="OpenHamburger('closed')">
-                      <img src="https://www.countryflags.io/de/flat/64.png" alt="deutsch/german">
-                      deutsch
-                    </a>
-                  </li>
-                </ul>
-              </li>
+      <header class="navigation">
+        <div class="row no-gutters">
+          <div class="col">
+            <h1 class="h1Left">
+              <a href="#home">Besser</a>
+            </h1>
+          </div>
+
+          <div class="col-xs-auto">
+            <div id="Hamburger" onclick="OpenHamburger()">
+              <div class="hamMenuDiv">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="char1">m</span>
+                <span class="char2">e</span>
+                <span class="char3">n</span>
+                <span class="char4">u</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <h1 class="h1Right">
+              <a href="#home">Bewegt</a>
+            </h1>
+          </div>
+        </div>
+
+        <div class="row no-gutters">
+          <nav>
+            <ul class="nav-list CircleMenu CM-ID-110 CM-MD-480 CM-BC-1">
+              <!-- Setting the links to #! will ensure that no action takes place on click. -->
+
+              <li class="CircleMenu1 onlyHam"></li>
+              <li class="CircleMenu2 CM-S-9 CM-R--72"><a href="#home" class="current" onclick="OpenHamburger('closed')">Home</a></li>
+              <li class="CircleMenu3 CM-S-6 CM-R-50"><a href="#activities" onclick="OpenHamburger('closed')">Aktivitäten</a></li>
+              <li class="CircleMenu4 CM-S-4 CM-R--20"><a href="#about" onclick="OpenHamburger('closed')">Über mich</a></li>
+              <li class="CircleMenu5 CM-S-3 CM-R-25"><a href="#contact" onclick="OpenHamburger('closed')">Kontakt</a></li>
+              <li class="CircleMenu6 CM-S-3 CM-R-0 onlyHam">Besser Bewegt</li>
             </ul>
           </nav>
         </div>
+
       </header>
 
-      <section class="hero-image" id="home">
+      
+
+      <!-- <section class="hero-image" id="home">
         <div class="hero-text">
           <h1 style="font-size:50px">Willkommen</h1>
           <p>Constanze Freiling - Personaltrainer</p>
           <button onclick="location.href='#contact'">Kontakt</button>
         </div>
-      </section>  
+      </section>  --> 
       
       <main>
+        <section id="home">
+          <h1>
+            Constanze <br> Freiling
+            <p id="test">Personal Trainer</p>
+          </h1>
+          <div class="symbol">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </section>
+
         <section id="activities">
           <h2 class="Title_center">AKTIVITÄTEN</h2>
           <!-- <p class="Title_desc">Key features</p> -->
@@ -153,7 +170,21 @@
         </section>
 
         <section id="contact">
-          <h2 class="Title_center">KONTAKT</h2>
+          <h2 class="Title_center">
+            <div id="switchContact" class="encircle checked" onclick="CheckIt('contact','switchContact')">
+              KONTAKT
+              <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+                <path fill="none" d="M325,18C228.7-8.3,118.5,8.3,78,21C22.4,38.4,4.6,54.6,5.6,77.6c1.4,32.4,52.2,54,142.6,63.7 c66.2,7.1,212.2,7.5,273.5-8.3c64.4-16.6,104.3-57.6,33.8-98.2C386.7-4.9,179.4-1.4,126.3,20.7" />
+              </svg>
+            </div>
+            -
+            <div id="switchVoucher" class="encircle" onclick="CheckIt('contact','switchVoucher')">
+              Good-Shine
+              <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+                <path fill="none" d="M325,18C228.7-8.3,118.5,8.3,78,21C22.4,38.4,4.6,54.6,5.6,77.6c1.4,32.4,52.2,54,142.6,63.7 c66.2,7.1,212.2,7.5,273.5-8.3c64.4-16.6,104.3-57.6,33.8-98.2C386.7-4.9,179.4-1.4,126.3,20.7" />
+              </svg>
+            </div>
+          </h2>
           <!-- <p class="Title_desc">Key features</p> -->
 
           <div class="row no-gutters">
